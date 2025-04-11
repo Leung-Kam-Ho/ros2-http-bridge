@@ -1,4 +1,4 @@
-# ROS 2 HTTP Web Bridge (Flask-Based)
+# ROS 2 HTTP Web Bridge
 
 This is a simple template for bridging HTTP API requests to ROS 2 topics using Flask. It allows external clients (e.g., a web frontend or mobile app) to send JSON-formatted commands via HTTP POST, which are then converted into ROS 2 messages and published into the ROS network.
 
