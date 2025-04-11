@@ -20,3 +20,46 @@ Send velocity commands from a web interface, mobile app, or any HTTP client to c
 - `Flask` Python package:
   ```bash
   pip install -r requirements.txt
+  ```
+
+## Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-repo/universal_ws.git
+   cd universal_ws/src/web_bridge_pkg
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Build the Package:**
+   ```bash
+   cd ../../..
+   colcon build --packages-select web_bridge_pkg
+   ```
+
+4. **Source the Workspace:**
+   ```bash
+   source install/setup.bash
+   ```
+
+## Usage
+
+1. **Run the Node:**
+   ```bash
+   ros2 run web_bridge_pkg web_bridge_node
+   ```
+
+2. **Send a Command:**
+   Use `curl` or any HTTP client to send a POST request:
+   ```bash
+   curl -X POST http://localhost:8888/cmd_vel -H "Content-Type: application/json" -d '{"linear": {"x": 0.5, "y": 0.0, "z": 0.0}, "angular": {"x": 0.0, "y": 0.0, "z": 0.5}}'
+   ```
+
+## Configuration
+
+- **Port:** The Flask server runs on port `8888`. You can change this in the `web_bridge_node.py` file.
+- **Topics:** The node currently publishes to the `/cmd_vel` topic. You can modify this in the `WebBridgeNode` class.
