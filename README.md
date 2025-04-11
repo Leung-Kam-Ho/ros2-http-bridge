@@ -4,8 +4,8 @@ This is a simple template for bridging HTTP API requests to ROS 2 topics using F
 
 ## Features
 
-- Python-only, no JavaScript frontend
-- HTTP API via Flask (no WebSockets)
+- Python-only
+- HTTP API via Flask
 - Publishes geometry messages (e.g. `Twist` to `cmd_vel`)
 - Easily extensible to support more topics or message types
 
